@@ -35,3 +35,22 @@
                  return index
              left += num
          return -1
+### 3. Isomorphic String
+       I. Input: s = "egg", t = "add"
+          Output: true
+      II. Input: s = "foo", t = "bar"
+          Output: false
+### Code: 
+         class Solution:
+         def isIsomorphic(self, s: str, t: str) -> bool:
+             return len(set(zip(s, t))) == len(set(s)) and len(set(zip(t, s))) == len(set(t))
+
+
+
+
+
+
+
+
+
+
