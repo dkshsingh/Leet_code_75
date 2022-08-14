@@ -44,9 +44,26 @@
          class Solution:
          def isIsomorphic(self, s: str, t: str) -> bool:
              return len(set(zip(s, t))) == len(set(s)) and len(set(zip(t, s))) == len(set(t))
+### 4. Is Subsequence
+     I. Input: s = "abc", t = "ahbgdc"
+       Output: true
+     II. Input: s = "axc", t = "ahbgdc"
+       Output: false
+### Code:
+         class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        if len(s) > len(t):
+            return False
+        if len(s) == 0:
+            return True
+        subsequence=0
+        for i in range(0,len(t)):
+            if subsequence <= len(s) -1:
+                print(s[subsequence])
+                if s[subsequence]==t[i]:
 
-
-
+                    subsequence+=1
+        return  subsequence == len(s) 
 
 
 
