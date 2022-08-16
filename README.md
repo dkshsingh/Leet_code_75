@@ -88,6 +88,20 @@
                      head = n
             
                   return head
-        
+ 
+ ### 6. Longest palindrome
+         Input: s = "abccccdd"
+         Output: 7
+         Explanation: One longest palindrome that can be built is "dccaccd", whose length is 7.
 
-
+### Code:
+         class Solution:
+        def longestPalindrome(self, s: str) -> int:
+            hash = set()
+                for c in s:
+                    if c not in hash:
+                        hash.add(c)
+                    else:
+                        hash.remove(c)
+             # len(hash) is the number of the odd letters
+             return len(s) - len(hash) + 1 if len(hash) > 0 else len(s)
