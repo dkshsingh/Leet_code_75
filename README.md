@@ -105,3 +105,34 @@
                         hash.remove(c)
              # len(hash) is the number of the odd letters
              return len(s) - len(hash) + 1 if len(hash) > 0 else len(s)
+
+### 7.Middle of the linked list
+       Input: head = [1,2,3,4,5]
+       Output: [3,4,5]
+      Explanation: The middle node of the list is node 3.
+    
+### Code:
+        # Definition for singly-linked list.
+        # class ListNode:
+        # def __init__(self, val=0, next=None):
+        # self.val = val
+        # self.next = next
+         class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow, fast = head, head
+        
+        while fast:
+            
+            fast = fast.next
+            if fast:
+                fast = fast.next
+            else:
+                # fast has reached the end of linked list
+                # slow is on the middle point now
+                break
+        
+            slow = slow.next
+        
+        return slow
+
+
